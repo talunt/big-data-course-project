@@ -1,0 +1,18 @@
+{
+  "protocol": "exploratory extension; original test results previously observed; no test-driven grid changes",
+  "seed": 42,
+  "families": {
+    "OLS": [{"regParam": 0.0, "elasticNetParam": 0.0}],
+    "Ridge": [{"regParam": 0.01}, {"regParam": 1.0}, {"regParam": 10.0}],
+    "Lasso": [{"regParam": 0.01, "elasticNetParam": 1.0}, {"regParam": 1.0, "elasticNetParam": 1.0}, {"regParam": 10.0, "elasticNetParam": 1.0}],
+    "ElasticNet": [{"regParam": 0.01, "elasticNetParam": 0.5}, {"regParam": 1.0, "elasticNetParam": 0.5}, {"regParam": 10.0, "elasticNetParam": 0.5}],
+    "PolyRidge": [{"regParam": 0.01}, {"regParam": 1.0}, {"regParam": 10.0}],
+    "DecisionTree": [{"maxDepth": 2}, {"maxDepth": 4}, {"maxDepth": 6}],
+    "RandomForest": [{"maxDepth": 3, "numTrees": 40}, {"maxDepth": 5, "numTrees": 40}],
+    "GBT": [{"maxDepth": 2, "maxIter": 30}, {"maxDepth": 3, "maxIter": 50}],
+    "KNN": [{"k": 5}, {"k": 15}, {"k": 30}]
+  },
+  "rolling_families": ["Ridge", "PolyRidge", "RandomForest", "GBT", "KNN"],
+  "rolling_train_ends": [365, 438],
+  "rolling_horizon": 73
+}
